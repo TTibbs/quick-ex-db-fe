@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
-import { FiCopy } from "react-icons/fi";
 import Button from "./ui/Button";
+import { FiCopy } from "react-icons/fi";
 
 const Intro = () => {
   const [copied, setCopied] = useState(false);
@@ -16,13 +15,18 @@ const Intro = () => {
   };
 
   return (
-    <motion.section
-      id="home"
+    <section
+      id="intro"
       className="flex flex-col items-center justify-center text-center gap-5 pt-40"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 2 }}
     >
+      <img
+        src="/icon.png"
+        alt="Credits for the icon: https://www.flaticon.com/authors/phatplus"
+        className="w-36"
+      />
       <h2 className="text-3xl md:text-4xl font-semibold text-zinc-200">
         Create Expg Server
       </h2>
@@ -67,7 +71,7 @@ const Intro = () => {
           </button>
         </code>
       </div>
-    </motion.section>
+    </section>
   );
 };
 

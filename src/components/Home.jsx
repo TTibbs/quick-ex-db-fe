@@ -1,15 +1,22 @@
 import React from "react";
-import CreateExpgServerDemo from "./CreateExpgServerDemo";
-import Demo from "./Demo";
+import { motion } from "framer-motion";
 import Intro from "./Intro";
+import Demo from "./Demo";
+import CreateExpgServerDemo from "./CreateExpgServerDemo";
 
 const Home = () => {
   return (
-    <section className="flex flex-col items-center gap-8 w-full px-4 sm:px-6 lg:px-8 mx-auto bg-zinc-900">
+    <motion.section
+      id="home"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 2.5 }}
+      className="flex flex-col items-center gap-8 w-full px-4 sm:px-6 lg:px-8 mx-auto bg-zinc-900"
+    >
       <Intro />
       <Demo />
       <CreateExpgServerDemo />
-    </section>
+    </motion.section>
   );
 };
 

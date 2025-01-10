@@ -56,25 +56,25 @@ const Demo = () => {
             whileInView={{ opacity: 1 }}
             transition={{ delay: 3.75 }}
           >
-            GitHub repository URL:{" "}
-            <span className="font-medium break-words whitespace-normal">
-              https://github.com/TTibbs/project_name.git
-            </span>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 4.5 }}
-          >
             Do you want to use TypeScript? (y/n):{" "}
             <span className="font-medium">y</span>
           </motion.div>
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ delay: 5.25 }}
+            transition={{ delay: 4.5 }}
           >
             Creating project directory at ...
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 5.25 }}
+          >
+            GitHub repository URL:{" "}
+            <span className="font-medium break-words whitespace-normal">
+              https://github.com/TTibbs/project_name.git
+            </span>
           </motion.div>
           <motion.div
             initial={{ opacity: 0 }}
