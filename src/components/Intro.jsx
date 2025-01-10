@@ -26,7 +26,7 @@ const Intro = () => {
       <h2 className="text-3xl md:text-4xl font-semibold text-zinc-200">
         Create Expg Server
       </h2>
-      <p className="text-base md:text-lg text-zinc-200">
+      <p className="text-base md:text-lg text-zinc-200 px-5">
         A simple CLI tool to scaffold your Express and PostgreSQL projects with
         ease.
       </p>
@@ -54,7 +54,7 @@ const Intro = () => {
         <h2 className="text-base md:text-lg text-start font-bold text-zinc-200">
           Installation
         </h2>
-        <code className="bg-gray-200 text-zinc-800 rounded-lg shadow-md py-2 px-4 flex items-center justify-between gap-2 w-[300px] md:w-[600px]">
+        <code className="bg-gray-200 text-zinc-800 rounded-lg shadow-md py-2 px-4 flex items-center justify-between gap-2 w-[300px] md:w-[450px] lg:w-[600px]">
           <pre className="text-sm font-mono whitespace-pre-wrap break-words">
             {command}
           </pre>

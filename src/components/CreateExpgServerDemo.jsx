@@ -94,40 +94,42 @@ ${folderStructure}`
   };
 
   return (
-    <section className="p-6 bg-gray-100 rounded shadow-lg max-w-screen-xl mt-20 mb-10">
-      <h3 className="text-2xl font-semibold text-center mb-6">
+    <section className="p-6 sm:p-8 md:p-10 bg-gray-100 rounded-lg shadow-lg w-[400px] md:w-[600px] mx-auto mt-10 mb-10">
+      <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-center mb-6">
         Interactive Demo
       </h3>
       <div className="mb-4">
-        <label className="block text-sm font-medium mb-1">Project Name:</label>
+        <label className="block text-sm sm:text-base font-medium mb-2">
+          Project Name:
+        </label>
         <input
           type="text"
           value={projectName}
           onChange={(e) => setProjectName(e.target.value)}
-          className="w-full p-2 border rounded"
+          className="w-full p-2 sm:p-3 border rounded-lg"
           placeholder="Enter project name"
         />
       </div>
-
       <div className="mb-4">
-        <label className="block text-sm font-medium mb-1">Author Name:</label>
+        <label className="block text-sm sm:text-base font-medium mb-2">
+          Author Name:
+        </label>
         <input
           type="text"
           value={authorName}
           onChange={(e) => setAuthorName(e.target.value)}
-          className="w-full p-2 border rounded"
+          className="w-full p-2 sm:p-3 border rounded-lg"
           placeholder="Enter author name"
         />
       </div>
-
       <div className="mb-4">
-        <label className="block text-sm font-medium mb-1">
+        <label className="block text-sm sm:text-base font-medium mb-2">
           Do you have a GitHub repository?
         </label>
-        <div className="flex items-center gap-4">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
           <button
             onClick={() => setHasGitHubRepo(!hasGitHubRepo)}
-            className={`px-4 py-2 rounded ${
+            className={`py-2 px-3 rounded-lg ${
               hasGitHubRepo ? "bg-green-500 text-white" : "bg-gray-300"
             }`}
           >
@@ -138,20 +140,19 @@ ${folderStructure}`
               type="text"
               value={repoUrl}
               onChange={(e) => setRepoUrl(e.target.value)}
-              className="w-full p-2 border rounded"
+              className="w-full sm:w-2/3 p-2 sm:p-3 border rounded"
               placeholder="Enter GitHub repo URL"
             />
           )}
         </div>
       </div>
-
       <div className="mb-4">
-        <label className="block text-sm font-medium mb-1">
+        <label className="block text-sm sm:text-base font-medium mb-2">
           Do you want to use TypeScript?
         </label>
         <button
           onClick={() => setIsTypeScript(!isTypeScript)}
-          className={`px-4 py-2 rounded ${
+          className={`py-2 px-3 rounded-lg ${
             isTypeScript ? "bg-blue-500 text-white" : "bg-gray-300"
           }`}
         >
@@ -168,9 +169,8 @@ ${folderStructure}`
           Generate
         </Button>
       </div>
-
       {output && (
-        <pre className="mt-6 p-4 bg-gray-800 text-white rounded whitespace-pre-wrap">
+        <pre className="mt-6 p-4 bg-gray-800 text-white rounded whitespace-pre-wrap text-sm sm:text-base">
           {output}
         </pre>
       )}

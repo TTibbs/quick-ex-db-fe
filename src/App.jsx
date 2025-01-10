@@ -1,4 +1,3 @@
-import Demo from "./components/Demo";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
 

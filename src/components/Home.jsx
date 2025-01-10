@@ -5,7 +5,7 @@ import Intro from "./Intro";
 
 const Home = () => {
   return (
-    <section className="flex flex-col items-center gap-8 max-w-screen-xl mx-auto bg-zinc-900">
+    <section className="flex flex-col items-center gap-8 w-full px-4 sm:px-6 lg:px-8 mx-auto bg-zinc-900">
       <Intro />
       <Demo />
       <CreateExpgServerDemo />
