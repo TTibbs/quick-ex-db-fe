@@ -85,8 +85,7 @@ const CreateExpgServerDemo = () => {
     setOutput(
       `Project Name: ${projectName}
 Author: ${authorName}
-GitHub Repository: ${hasGitHubRepo ? repoUrl : "No"}
-TypeScript: ${isTypeScript ? "Yes" : "No"}
+GitHub Repository: ${hasGitHubRepo ? repoUrl : "Initiating Git repository..."}
 
 Directory Structure:
 ${folderStructure}`
