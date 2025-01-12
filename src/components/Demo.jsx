@@ -4,7 +4,7 @@ const Demo = () => {
   return (
     <section
       id="demo"
-      className="bg-gradient-to-t from-slate-200 to-slate-100 border rounded-md py-6 px-2 w-full max-w-[95%] md:max-w-[700px] mx-auto mt-20"
+      className="bg-gradient-to-t from-slate-200 to-slate-100 border rounded-md p-6 w-full max-w-[95%] md:max-w-[700px] mx-auto mt-20"
     >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -12,7 +12,7 @@ const Demo = () => {
         viewport={{ once: true }}
         className="size-full"
       >
-        <div className="flex items-center space-x-2 mb-6">
+        <div className="flex items-center space-x-2 mb-2">
           <div className="w-4 h-4 rounded-full bg-red-500" />
           <div className="w-4 h-4 rounded-full bg-yellow-500" />
           <div className="w-4 h-4 rounded-full bg-green-500" />
@@ -21,102 +21,78 @@ const Demo = () => {
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.75 }}
+            transition={{ delay: 0.5 }}
             className="flex items-center"
           >
             <span className="font-bold text-indigo-600 text-base md:text-lg">
-              <span className="font-bold text-2xl">→</span> Welcome to
-              <span className="text-primary ml-2">create-expg-server!</span>
+              <span className="font-bold text-2xl">→</span> Welcome to{" "}
+              <span className="text-primary ml-2">quick-ex-db!</span>
             </span>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 1 }}
+          >
+            Project name: <span className="font-medium">psql-test</span>
           </motion.div>
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 1.5 }}
           >
-            Project name: <span className="font-medium">the-best-app</span>
+            ✔ Select a database: <span className="font-medium">PostgreSQL</span>
           </motion.div>
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ delay: 2.25 }}
+            transition={{ delay: 2 }}
           >
-            Author name: <span className="font-medium">TTibbs</span>
+            ✔ Select a variant:{" "}
+            <span className="font-medium">PostgreSQL + JavaScript</span>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 2.5 }}
+          >
+            Scaffolding project in{" "}
+            <span className="font-medium">
+              /Users/10xdev/Desktop/Coding/psql-test...
+            </span>
           </motion.div>
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 3 }}
           >
-            Do you have a GitHub repository? (y/n):{" "}
-            <span className="font-medium">y</span>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 3.75 }}
-          >
-            Do you want to use TypeScript? (y/n):{" "}
-            <span className="font-medium">y</span>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 4.5 }}
-          >
-            Creating project directory at ...
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 5.25 }}
-          >
-            GitHub repository URL:{" "}
-            <span className="font-medium break-words whitespace-normal">
-              https://github.com/TTibbs/project_name.git
-            </span>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 6 }}
-          >
-            Project setup complete.
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 6.75 }}
-          >
             🗂️ Creating project structure...
           </motion.div>
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ delay: 7.5 }}
-          >
-            📍 GitHub repository already exists.
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 8.25 }}
-          >
-            ⚙️ Setting up TypeScript...
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 9 }}
+            transition={{ delay: 3.5 }}
           >
             💾 Installing dependencies...
           </motion.div>
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ delay: 9.75 }}
+            transition={{ delay: 4 }}
           >
-            ✅ Success! Your Express app is ready at ...
+            ✅ Done. Now run:
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 4.5 }}
+            className="bg-gray-200 text-zinc-800 rounded-lg shadow-md py-2 px-4 mt-2"
+          >
+            <pre className="text-sm font-mono whitespace-pre-wrap break-words">
+              cd test
+              <br />
+              npm install
+            </pre>
           </motion.div>
         </div>
       </motion.div>

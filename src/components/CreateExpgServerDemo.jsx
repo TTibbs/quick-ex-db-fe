@@ -4,10 +4,100 @@ import Button from "./ui/Button";
 const CreateExpgServerDemo = () => {
   const [projectName, setProjectName] = useState("");
   const [authorName, setAuthorName] = useState("");
-  const [hasGitHubRepo, setHasGitHubRepo] = useState(false);
-  const [repoUrl, setRepoUrl] = useState("");
+  const [selectedDatabase, setSelectedDatabase] = useState("postgres");
   const [isTypeScript, setIsTypeScript] = useState(false);
   const [output, setOutput] = useState("");
+
+  const databaseOptions = {
+    postgres: {
+      name: "PostgreSQL",
+      structure: `
+📁 ${projectName || "psql-test"}/
+├── 📁 __tests__/
+│   └── app.test.${isTypeScript ? "ts" : "js"}
+├── 📁 controllers/
+│   └── user-controller.${isTypeScript ? "ts" : "js"}
+├── 📁 db/
+│   ├── 📁 data/
+│   │   └── 📁 test-data/
+│   │       └── index.${isTypeScript ? "ts" : "js"}
+│   ├── 📁 seeds/
+│   │   ├── run-seed.${isTypeScript ? "ts" : "js"}
+│   │   └── seed.${isTypeScript ? "ts" : "js"}
+│   ├── connection.${isTypeScript ? "ts" : "js"}
+│   └── setup.sql
+├── 📁 errors/
+│   └── index.${isTypeScript ? "ts" : "js"}
+├── 📁 models/
+│   └── user-model.${isTypeScript ? "ts" : "js"}
+├── 📁 routes/
+│   ├── api-router.${isTypeScript ? "ts" : "js"}
+│   └── user-router.${isTypeScript ? "ts" : "js"}
+├── app.${isTypeScript ? "ts" : "js"}
+├── listener.${isTypeScript ? "ts" : "js"}
+├── .gitignore
+├── .env-example
+├── .env-test
+├── .env-development
+├── .env-production
+├── endpoints.json
+${
+  isTypeScript
+    ? `├── package.json
+└── tsconfig.json`
+    : `└── package.json`
+}
+      `,
+    },
+    sqlite: {
+      name: "SQLite",
+      structure: `
+📁 ${projectName || "sqlite-test"}/
+├── 📁 config/
+│   └── db.${isTypeScript ? "ts" : "js"}
+├── 📁 controllers/
+│   └── userController.${isTypeScript ? "ts" : "js"}
+├── 📁 models/
+│   └── userModel.${isTypeScript ? "ts" : "js"}
+├── 📁 routes/
+│   └── userRoutes.${isTypeScript ? "ts" : "js"}
+├── app.${isTypeScript ? "ts" : "js"}
+├── server.${isTypeScript ? "ts" : "js"}
+├── .env
+├── .gitignore
+${
+  isTypeScript
+    ? `├── package.json
+└── tsconfig.json`
+    : `└── package.json`
+}
+      `,
+    },
+    mongodb: {
+      name: "MongoDB",
+      structure: `
+📁 ${projectName || "mongo-test"}/
+├── 📁 database/
+│   └── connection.${isTypeScript ? "ts" : "js"}
+├── 📁 controllers/
+│   └── userController.${isTypeScript ? "ts" : "js"}
+├── 📁 models/
+│   └── userModel.${isTypeScript ? "ts" : "js"}
+├── 📁 routes/
+│   └── userRoutes.${isTypeScript ? "ts" : "js"}
+├── app.${isTypeScript ? "ts" : "js"}
+├── server.${isTypeScript ? "ts" : "js"}
+├── .env
+├── .gitignore
+${
+  isTypeScript
+    ? `├── package.json
+└── tsconfig.json`
+    : `└── package.json`
+}
+      `,
+    },
+  };
 
   const handleGenerate = () => {
     if (!projectName || !authorName) {
@@ -15,77 +105,15 @@ const CreateExpgServerDemo = () => {
       return;
     }
 
-    const folderStructure = isTypeScript
-      ? `📁 ${projectName}/
-├── 📁 tests/
-│   └── app.test.ts
-├── 📁 controllers/
-│   └── users-controller.ts
-├── 📁 db/
-│   ├── 📁 data/
-│   │   └── 📁 test-data/
-│   │       └── index.ts
-│   ├── 📁 seeds/
-│   │   ├── run-seed.ts
-│   │   └── seed.ts
-│   ├── connection.ts
-│   └── setup.sql
-├── 📁 errors/
-│   └── index.ts
-├── 📁 models/
-│   └── users-model.ts
-├── 📁 node_modules/
-├── 📁 routes/
-│   ├── api-router.ts
-│   └── users-router.ts
-├── .env-example
-├── .env.development
-├── .env.production
-├── .env.test
-├── .gitignore
-├── app.ts
-├── endpoints.json
-├── listener.ts
-├── package-lock.json
-├── package.json
-└── tsconfig.json`
-      : `📁 ${projectName}/
-├── 📁 tests/
-│   └── app.test.js
-├── 📁 controllers/
-│   └── users-controller.js
-├── 📁 db/
-│   ├── 📁 data/
-│   │   └── 📁 test-data/
-│   │       └── index.js
-│   ├── 📁 seeds/
-│   │   ├── run-seed.js
-│   │   └── seed.js
-│   ├── connection.js
-│   └── setup.sql
-├── 📁 errors/
-│   └── index.js
-├── 📁 models/
-│   └── users-model.js
-├── 📁 node_modules/
-├── 📁 routes/
-│   ├── api-router.js
-│   └── users-router.js
-├── .env-example
-├── .env.development
-├── .env.production
-├── .env.test
-├── .gitignore
-├── app.js
-├── endpoints.json
-├── listener.js
-├── package-lock.json
-└── package.json`;
+    const selectedOption = databaseOptions[selectedDatabase];
+    const folderStructure = selectedOption
+      ? selectedOption.structure
+      : "Invalid database selected.";
 
     setOutput(
       `Project Name: ${projectName}
 Author: ${authorName}
-GitHub Repository: ${hasGitHubRepo ? repoUrl : "Initiating Git repository..."}
+Database: ${selectedOption.name}
 
 Directory Structure:
 ${folderStructure}`
@@ -123,27 +151,19 @@ ${folderStructure}`
       </div>
       <div className="mb-4">
         <label className="block text-sm sm:text-base font-medium mb-2">
-          Do you have a GitHub repository?
+          Choose Database:
         </label>
-        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-          <button
-            onClick={() => setHasGitHubRepo(!hasGitHubRepo)}
-            className={`py-2 px-3 rounded-lg ${
-              hasGitHubRepo ? "bg-green-500 text-white" : "bg-gray-300"
-            }`}
-          >
-            {hasGitHubRepo ? "Yes" : "No"}
-          </button>
-          {hasGitHubRepo && (
-            <input
-              type="text"
-              value={repoUrl}
-              onChange={(e) => setRepoUrl(e.target.value)}
-              className="w-full sm:w-2/3 p-2 sm:p-3 border rounded"
-              placeholder="Enter GitHub repo URL"
-            />
-          )}
-        </div>
+        <select
+          value={selectedDatabase}
+          onChange={(e) => setSelectedDatabase(e.target.value)}
+          className="w-full p-2 sm:p-3 border rounded-lg"
+        >
+          {Object.keys(databaseOptions).map((key) => (
+            <option key={key} value={key}>
+              {databaseOptions[key].name}
+            </option>
+          ))}
+        </select>
       </div>
       <div className="mb-4">
         <label className="block text-sm sm:text-base font-medium mb-2">

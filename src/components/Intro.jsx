@@ -4,7 +4,7 @@ import { FiCopy } from "react-icons/fi";
 
 const Intro = () => {
   const [copied, setCopied] = useState(false);
-  const command = `npm i create-expg-server`;
+  const command = `npm i quick-ex-db`;
 
   const handleCopy = () => {
     navigator.clipboard
@@ -28,24 +28,25 @@ const Intro = () => {
         className="w-36"
       />
       <h2 className="text-3xl md:text-4xl font-semibold text-zinc-200">
-        Create Expg Server
+        Quick Ex DB
       </h2>
-      <p className="text-base md:text-lg text-zinc-200 px-5">
-        A simple CLI tool to scaffold your Express and PostgreSQL projects with
-        ease.
+      <p className="text-base md:text-lg lg:w-2/3 mx-auto text-zinc-200 px-5">
+        A powerful CLI tool for scaffolding Express.js projects with database
+        integration. Simplify your workflow and get started with a clean,
+        ready-to-go setup in JavaScript or TypeScript.
       </p>
       <div className="flex items-center justify-center gap-5">
         <Button
-          href="https://www.npmjs.com/package/create-expg-server"
+          href="https://www.npmjs.com/package/quick-ex-db"
           target="_blank"
-          bgColor="bg-zinc-600"
+          bgColor="bg-indigo-500"
           textColor="text-zinc-200"
-          className="hover:bg-zinc-700 transition-all duration-300 ease-linear font-bold"
+          className="hover:bg-indigo-600 transition-all duration-300 ease-linear font-bold"
         >
           NPM
         </Button>
         <Button
-          href="https://github.com/TTibbs/create-expg-app"
+          href="https://github.com/TTibbs/quick-ex-db"
           target="_blank"
           bgColor="bg-zinc-200"
           textColor="text-zinc-900"
