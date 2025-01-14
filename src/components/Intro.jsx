@@ -4,7 +4,7 @@ import { FiCopy } from "react-icons/fi";
 
 const Intro = () => {
   const [copied, setCopied] = useState(false);
-  const command = `npm i quick-ex-db`;
+  const command = `npm i -g create-mvc-server`;
 
   const handleCopy = () => {
     navigator.clipboard
@@ -28,7 +28,7 @@ const Intro = () => {
         className="w-36"
       />
       <h2 className="text-3xl md:text-4xl font-semibold text-zinc-200">
-        Quick Ex DB
+        create-mvc-server
       </h2>
       <p className="text-base md:text-lg lg:w-2/3 mx-auto text-zinc-200 px-5">
         A powerful CLI tool for scaffolding Express.js projects with database
@@ -46,7 +46,7 @@ const Intro = () => {
           NPM
         </Button>
         <Button
-          href="https://github.com/TTibbs/quick-ex-db"
+          href="https://github.com/TTibbs/create-mvc-server"
           target="_blank"
           bgColor="bg-zinc-200"
           textColor="text-zinc-900"

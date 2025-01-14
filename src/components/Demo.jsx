@@ -26,7 +26,7 @@ const Demo = () => {
           >
             <span className="font-bold text-indigo-600 text-base md:text-lg">
               <span className="font-bold text-2xl">→</span> Welcome to{" "}
-              <span className="text-primary ml-2">quick-ex-db!</span>
+              <span className="text-primary ml-2">create-mvc-server!</span>
             </span>
           </motion.div>
           <motion.div
