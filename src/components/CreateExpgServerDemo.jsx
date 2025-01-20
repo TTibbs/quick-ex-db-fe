@@ -33,14 +33,14 @@ const CreateExpgServerDemo = () => {
 ├── 📁 routes/
 │   ├── api-router.${isTypeScript ? "ts" : "js"}
 │   └── user-router.${isTypeScript ? "ts" : "js"}
-├── app.${isTypeScript ? "ts" : "js"}
-├── listener.${isTypeScript ? "ts" : "js"}
-├── .gitignore
 ├── .env-example
-├── .env-test
 ├── .env-development
 ├── .env-production
+├── .env-test
+├── .gitignore
+├── app.${isTypeScript ? "ts" : "js"}
 ├── endpoints.json
+├── listener.${isTypeScript ? "ts" : "js"}
 ${
   isTypeScript
     ? `├── package.json
@@ -61,10 +61,10 @@ ${
 │   └── userModel.${isTypeScript ? "ts" : "js"}
 ├── 📁 routes/
 │   └── userRoutes.${isTypeScript ? "ts" : "js"}
-├── app.${isTypeScript ? "ts" : "js"}
-├── server.${isTypeScript ? "ts" : "js"}
 ├── .env
 ├── .gitignore
+├── app.${isTypeScript ? "ts" : "js"}
+├── server.${isTypeScript ? "ts" : "js"}
 ${
   isTypeScript
     ? `├── package.json
@@ -77,18 +77,46 @@ ${
       name: "MongoDB",
       structure: `
 📁 ${projectName || "mongo-test"}/
-├── 📁 database/
+├── 📁 config/
 │   └── connection.${isTypeScript ? "ts" : "js"}
+├── 📁 controllers/
+│   └── userController.${isTypeScript ? "ts" : "js"}
+├── 📁 middlewares/
+│   └── index.${isTypeScript ? "ts" : "js"}
+├── 📁 models/
+│   └── userModel.${isTypeScript ? "ts" : "js"}
+├── 📁 routes/
+│   └── userRoutes.${isTypeScript ? "ts" : "js"}
+├── 📁 utils/
+├── .env
+├── .gitignore
+├── app.${isTypeScript ? "ts" : "js"}
+├── README.md
+├── server.${isTypeScript ? "ts" : "js"}
+${
+  isTypeScript
+    ? `├── package.json
+└── tsconfig.json`
+    : `└── package.json`
+}
+      `,
+    },
+    mysql: {
+      name: "MySQL",
+      structure: `
+📁 ${projectName || "mysql-test"}/
+├── 📁 config/
+│   └── db.${isTypeScript ? "ts" : "js"}
 ├── 📁 controllers/
 │   └── userController.${isTypeScript ? "ts" : "js"}
 ├── 📁 models/
 │   └── userModel.${isTypeScript ? "ts" : "js"}
 ├── 📁 routes/
 │   └── userRoutes.${isTypeScript ? "ts" : "js"}
-├── app.${isTypeScript ? "ts" : "js"}
-├── server.${isTypeScript ? "ts" : "js"}
 ├── .env
 ├── .gitignore
+├── app.${isTypeScript ? "ts" : "js"}
+├── server.${isTypeScript ? "ts" : "js"}
 ${
   isTypeScript
     ? `├── package.json
@@ -121,7 +149,7 @@ ${folderStructure}`
   };
 
   return (
-    <section className="p-6 sm:p-8 md:p-10 bg-gray-100 rounded-lg shadow-lg w-[400px] md:w-[600px] mx-auto mt-10 mb-10">
+    <section className="p-6 sm:p-8 md:p-10 bg-gray-100 rounded-lg shadow-lg w-full max-w-[95%] md:max-w-[700px] mx-auto mt-10 mb-10">
       <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-center mb-6">
         Interactive Demo
       </h3>

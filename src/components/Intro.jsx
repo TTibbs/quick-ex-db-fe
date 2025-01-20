@@ -59,7 +59,7 @@ const Intro = () => {
         <h2 className="text-base md:text-lg text-start font-bold text-zinc-200">
           Installation
         </h2>
-        <code className="bg-gray-200 text-zinc-800 rounded-lg shadow-md py-2 px-4 flex items-center justify-between gap-2 w-[300px] md:w-[450px] lg:w-[600px]">
+        <code className="bg-gray-200 text-zinc-800 rounded-lg shadow-md py-2 px-4 flex items-center justify-between gap-2 w-[270px] md:w-[450px] lg:w-[600px]">
           <pre className="text-sm font-mono whitespace-pre-wrap break-words">
             {command}
           </pre>

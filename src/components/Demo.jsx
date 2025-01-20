@@ -34,46 +34,44 @@ const Demo = () => {
             whileInView={{ opacity: 1 }}
             transition={{ delay: 1 }}
           >
-            Project name: <span className="font-medium">psql-test</span>
+            Project name: <span className="font-medium">test</span>
           </motion.div>
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 1.5 }}
           >
-            ✔ Select a database: <span className="font-medium">PostgreSQL</span>
+            Initialise a git repository?{" "}
+            <span className="font-medium">yes</span>
           </motion.div>
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 2 }}
           >
-            ✔ Select a variant:{" "}
-            <span className="font-medium">PostgreSQL + JavaScript</span>
+            Select Server Framework: <span className="font-medium">Hono</span>
           </motion.div>
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 2.5 }}
           >
-            Scaffolding project in{" "}
-            <span className="font-medium">
-              /Users/10xdev/Desktop/Coding/psql-test...
-            </span>
+            Select Database <span className="font-medium">Postgres</span>
           </motion.div>
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 3 }}
           >
-            🗂️ Creating project structure...
+            Select Language <span className="font-medium">TypeScript</span>
           </motion.div>
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 3.5 }}
           >
-            💾 Installing dependencies...
+            Initialised empty git repository in{" "}
+            <span className="font-medium">/.../test/.git/</span>
           </motion.div>
           <motion.div
             initial={{ opacity: 0 }}
